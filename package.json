@@ -5,6 +5,9 @@
   "type": "module",
   "description": "Old School RuneScape-themed UI component library built on shadcn/ui patterns",
   "scripts": {
+    "registry:sync": "node scripts/sync-registry.mjs",
+    "predev": "pnpm registry:sync",
+    "prebuild": "pnpm registry:sync",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",

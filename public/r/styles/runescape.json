@@ -1,0 +1,50 @@
+{
+  "name": "runescape",
+  "label": "RuneScape",
+  "cssVars": {
+    "light": {
+      "background": "25 35% 18%",
+      "foreground": "0 0% 100%",
+      "card": "25 30% 15%",
+      "card-foreground": "30 100% 56%",
+      "popover": "25 35% 18%",
+      "popover-foreground": "30 100% 56%",
+      "primary": "45 65% 58%",
+      "primary-foreground": "0 0% 0%",
+      "secondary": "25 20% 25%",
+      "secondary-foreground": "0 0% 100%",
+      "muted": "25 20% 25%",
+      "muted-foreground": "30 30% 70%",
+      "accent": "45 65% 58%",
+      "accent-foreground": "0 0% 0%",
+      "destructive": "0 100% 50%",
+      "destructive-foreground": "0 0% 100%",
+      "border": "0 0% 0%",
+      "input": "25 30% 25%",
+      "ring": "30 100% 56%",
+      "radius": "0px"
+    },
+    "dark": {
+      "background": "25 35% 12%",
+      "foreground": "0 0% 100%",
+      "card": "25 30% 10%",
+      "card-foreground": "30 100% 56%",
+      "popover": "25 35% 12%",
+      "popover-foreground": "30 100% 56%",
+      "primary": "45 65% 58%",
+      "primary-foreground": "0 0% 0%",
+      "secondary": "25 20% 20%",
+      "secondary-foreground": "0 0% 100%",
+      "muted": "25 20% 20%",
+      "muted-foreground": "30 30% 60%",
+      "accent": "45 65% 58%",
+      "accent-foreground": "0 0% 0%",
+      "destructive": "0 100% 50%",
+      "destructive-foreground": "0 0% 100%",
+      "border": "0 0% 0%",
+      "input": "25 30% 20%",
+      "ring": "30 100% 56%",
+      "radius": "0px"
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react"
 import { Copy, Check, ChevronDown, ExternalLink } from "lucide-react"
 
-const REPO_URL = "https://github.com/a01410207/runescapecn"
+const REPO_URL = "https://github.com/alns0dev/runescapecn"
 
 const llmMarkdown = `# runescapecn/ui
 
@@ -425,6 +425,24 @@ function GetStartedPage() {
               <span className="text-base text-rs-brown-light">{desc}</span>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Install via Registry */}
+      <section>
+        <h2 className="text-xl text-rs-gold font-[family-name:var(--font-rs-bold)] mb-4 border-b-2 border-rs-brown-light/40 pb-3">
+          Install via Registry
+        </h2>
+        <div className="space-y-3">
+          <p className="text-base text-rs-brown-light leading-relaxed">
+            Install any component directly with shadcn CLI from the hosted
+            runescapecn registry endpoint.
+          </p>
+          <pre className="overflow-x-auto border-2 border-black bg-rs-brown-dark p-3 text-rs-orange text-sm font-mono">
+            <code>
+              pnpm dlx shadcn@latest add https://runescapecn.com/r/badge.json
+            </code>
+          </pre>
         </div>
       </section>
 

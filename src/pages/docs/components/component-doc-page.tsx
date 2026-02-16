@@ -13,6 +13,7 @@ function ComponentDocPage() {
   }, [slug])
 
   const meta = componentRegistry.find((c) => c.slug === slug)
+  const installUrl = `https://runescapecn.com/r/${slug}.json`
 
   const Demo = useMemo(() => {
     if (!meta) return null
@@ -52,6 +53,16 @@ function ComponentDocPage() {
       </section>
 
       {/* Installation */}
+      <section>
+        <h2 className="text-xl text-rs-gold font-[family-name:var(--font-rs-bold)] mb-4 border-b-2 border-rs-brown-light/40 pb-3">
+          Install
+        </h2>
+        <CodeBlock
+          code={`pnpm dlx shadcn@latest add ${installUrl}`}
+        />
+      </section>
+
+      {/* Import */}
       <section>
         <h2 className="text-xl text-rs-gold font-[family-name:var(--font-rs-bold)] mb-4 border-b-2 border-rs-brown-light/40 pb-3">
           Import

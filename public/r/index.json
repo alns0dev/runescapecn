@@ -1,0 +1,52 @@
+{
+  "generatedAt": "2026-02-16T05:44:10.905Z",
+  "source": "registry/components",
+  "components": [
+    {
+      "name": "badge",
+      "path": "/r/badge.json"
+    },
+    {
+      "name": "button",
+      "path": "/r/button.json"
+    },
+    {
+      "name": "card",
+      "path": "/r/card.json"
+    },
+    {
+      "name": "checkbox",
+      "path": "/r/checkbox.json"
+    },
+    {
+      "name": "dialog",
+      "path": "/r/dialog.json"
+    },
+    {
+      "name": "input",
+      "path": "/r/input.json"
+    },
+    {
+      "name": "progress",
+      "path": "/r/progress.json"
+    },
+    {
+      "name": "select",
+      "path": "/r/select.json"
+    },
+    {
+      "name": "tabs",
+      "path": "/r/tabs.json"
+    },
+    {
+      "name": "tooltip",
+      "path": "/r/tooltip.json"
+    }
+  ],
+  "styles": [
+    {
+      "name": "runescape",
+      "path": "/r/styles/runescape.json"
+    }
+  ]
+}

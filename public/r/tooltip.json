@@ -1,0 +1,16 @@
+{
+  "name": "tooltip",
+  "type": "registry:ui",
+  "dependencies": [
+    "@radix-ui/react-tooltip",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "ui/tooltip.tsx",
+      "type": "registry:ui"
+    }
+  ]
+}

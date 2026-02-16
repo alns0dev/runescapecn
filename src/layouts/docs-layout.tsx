@@ -1,14 +1,24 @@
 import { useState } from "react"
 import { Link, Outlet } from "react-router-dom"
-import { Sword, Github, Menu, X } from "lucide-react"
+import { Github, Menu, X, Star } from "lucide-react"
+
+import { useGithubStars } from "@/hooks/use-github-stars"
 
 import { DocsSidebar } from "@/components/docs-sidebar"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 
 function DocsLayout() {
+  const stars = useGithubStars("alns0dev/runescapecn")
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
-    <div className="min-h-screen bg-rs-brown-dark flex flex-col">
+    <TooltipProvider>
+      <div className="min-h-screen bg-rs-brown-dark flex flex-col">
       {/* Header */}
       <header className="sticky top-0 z-50 border-b-2 border-black bg-rs-brown-dark/90 backdrop-blur-sm">
         <div className="max-w-[1400px] mx-auto flex items-center justify-between h-14 px-4 md:px-8">
@@ -25,11 +35,8 @@ function DocsLayout() {
               )}
             </button>
 
-            <Link to="/" className="flex items-center gap-3">
-              <Sword className="h-6 w-6 text-rs-gold" />
-              <span className="text-lg text-rs-gold font-[family-name:var(--font-rs-bold)] hidden sm:inline">
-                runescapecn/ui
-              </span>
+            <Link to="/" className="flex items-center gap-2">
+              <img src="/logo.svg" alt="runescapecn" className="h-7" />
             </Link>
           </div>
 
@@ -47,12 +54,18 @@ function DocsLayout() {
               Why
             </Link>
             <a
-              href="https://github.com/a01410207/runescapecn"
+              href="https://github.com/alns0dev/runescapecn"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-rs-brown-light hover:text-rs-yellow transition-none"
+              className="flex items-center gap-1.5 text-rs-brown-light hover:text-rs-yellow transition-none"
             >
               <Github className="h-5 w-5" />
+              {stars !== null && (
+                <span className="flex items-center gap-0.5 text-base font-[family-name:var(--font-rs-bold)]">
+                  <Star className="h-3.5 w-3.5 fill-current" />
+                  {stars}
+                </span>
+              )}
             </a>
           </div>
         </div>
@@ -85,21 +98,40 @@ function DocsLayout() {
 
       {/* Footer */}
       <footer className="border-t-2 border-black bg-rs-brown-dark/80">
-        <div className="max-w-[1400px] mx-auto flex items-center justify-center md:justify-start h-14 px-4 md:px-8">
-          <p className="text-base text-rs-brown-light">
-            Built by{" "}
-            <a
-              href="https://x.com/alns0_"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-rs-orange hover:text-rs-yellow underline underline-offset-4"
-            >
-              alns0
-            </a>
+        <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row md:items-center justify-center md:justify-start gap-1 md:gap-3 py-3 px-4 md:px-8">
+          <p className="text-base text-rs-brown-light flex items-center gap-2">
+            <span>
+              Built by{" "}
+              <a
+                href="https://x.com/alns0_"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-rs-orange hover:text-rs-yellow underline underline-offset-4"
+              >
+                alns0
+              </a>
+            </span>
+            <span className="text-rs-brown-light/70">|</span>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <span className="cursor-help text-rs-green">
+                  Level 99 Development
+                </span>
+              </TooltipTrigger>
+              <TooltipContent side="top">
+                <p>13,034,431 xp</p>
+              </TooltipContent>
+            </Tooltip>
+          </p>
+          <p className="text-sm text-rs-brown-light/90">
+            Disclaimer: runescapecn is not affiliated with Jagex or
+            RuneScape. This is a developer tribute project inspired by
+            the game.
           </p>
         </div>
       </footer>
-    </div>
+      </div>
+    </TooltipProvider>
   )
 }
 

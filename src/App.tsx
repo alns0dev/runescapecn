@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
-import { Sword, Shield, Coins, Github, Flame } from "lucide-react"
+import { Sword, Shield, Coins, Github, Flame, Star } from "lucide-react"
+
+import { useGithubStars } from "@/hooks/use-github-stars"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -168,6 +170,7 @@ const badgeCode = `import { Badge } from "@/components/ui/badge"
 <Badge variant="outline">Outline</Badge>`
 
 function App() {
+  const stars = useGithubStars("alns0dev/runescapecn")
   const [hitpoints, setHitpoints] = useState(99)
   const [searchValue, setSearchValue] = useState("")
   const [quickPrayer, setQuickPrayer] = useState(false)
@@ -207,11 +210,8 @@ function App() {
         {/* Header */}
         <header className="sticky top-0 z-50 border-b-2 border-black bg-rs-brown-dark/90 backdrop-blur-sm">
           <div className="max-w-[1400px] mx-auto flex items-center justify-between h-14 px-4 md:px-8">
-            <Link to="/" className="flex items-center gap-3">
-              <Sword className="h-6 w-6 text-rs-gold" />
-              <span className="text-lg text-rs-gold font-[family-name:var(--font-rs-bold)] hidden sm:inline">
-                runescapecn/ui
-              </span>
+            <Link to="/" className="flex items-center gap-2">
+              <img src="/logo.svg" alt="runescapecn" className="h-7" />
             </Link>
             <div className="flex items-center gap-3">
               <Link
@@ -227,12 +227,18 @@ function App() {
                 Why
               </Link>
               <a
-                href="https://github.com/a01410207/runescapecn"
+                href="https://github.com/alns0dev/runescapecn"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-rs-brown-light hover:text-rs-yellow transition-none"
+                className="flex items-center gap-1.5 text-rs-brown-light hover:text-rs-yellow transition-none"
               >
                 <Github className="h-5 w-5" />
+                {stars !== null && (
+                  <span className="flex items-center gap-0.5 text-base font-[family-name:var(--font-rs-bold)]">
+                    <Star className="h-3.5 w-3.5 fill-current" />
+                    {stars}
+                  </span>
+                )}
               </a>
             </div>
           </div>
@@ -297,11 +303,7 @@ function App() {
             <div className="absolute top-1/3 left-1/3 w-[300px] h-[300px] rounded-full bg-rs-orange/10 blur-[100px] pointer-events-none" />
 
             <div className="relative z-10 max-w-[750px] w-full rs-stone-bg border-2 border-black shadow-[inset_-1px_-1px_0_rgba(0,0,0,0.5),inset_1px_1px_0_rgba(255,255,255,0.08),6px_6px_0_rgba(0,0,0,0.4)] flex flex-col items-center text-center px-6 py-16 md:px-12 md:py-24">
-              <Sword className="h-16 w-16 md:h-20 md:w-20 text-rs-gold mb-6" />
-
-              <h1 className="text-5xl md:text-7xl text-rs-gold mb-4 normal-case font-[family-name:var(--font-rs-bold)]">
-                runescapecn
-              </h1>
+              <img src="/logo.svg" alt="runescapecn" className="h-12 md:h-16 mb-6" />
 
               <p className="text-xl md:text-2xl text-rs-brown-light max-w-xl mb-8 font-[family-name:var(--font-rs-quill)] leading-relaxed normal-case">
                 Old School RuneScape-themed UI components built on

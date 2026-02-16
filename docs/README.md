@@ -160,6 +160,25 @@ Additional fonts available via `font-family`:
 
 Components follow the shadcn/ui registry format. See `registry/` for JSON definitions of each component.
 
+Install a component directly from the hosted registry endpoint:
+
+```bash
+pnpm dlx shadcn@latest add https://runescapecn.com/r/badge.json
+```
+
+Local testing:
+
+```bash
+pnpm dev
+pnpm dlx shadcn@latest add http://localhost:5173/r/badge.json
+```
+
+Registry files are published from `registry/` to `public/r/` via:
+
+```bash
+pnpm registry:sync
+```
+
 ## Tech Stack
 
 - React 18+ with TypeScript
