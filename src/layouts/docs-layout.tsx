@@ -1,5 +1,5 @@
-import { useState } from "react"
-import { Link, Outlet } from "react-router-dom"
+import { useEffect, useState } from "react"
+import { Link, Outlet, useLocation } from "react-router-dom"
 import { Github, Menu, X, Star } from "lucide-react"
 
 import { useGithubStars } from "@/hooks/use-github-stars"
@@ -15,6 +15,11 @@ import {
 function DocsLayout() {
   const stars = useGithubStars("alns0dev/runescapecn")
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    setSidebarOpen(false)
+  }, [pathname])
 
   return (
     <TooltipProvider>

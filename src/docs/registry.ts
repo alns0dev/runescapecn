@@ -15,6 +15,7 @@ export interface VariantDef {
 export interface ComponentMeta {
   slug: string
   name: string
+  createdAt: string
   description: string
   importCode: string
   usageCode: string
@@ -27,6 +28,7 @@ export const componentRegistry: ComponentMeta[] = [
   {
     slug: "button",
     name: "Button",
+    createdAt: "2026-02-15",
     description:
       "A versatile button component with multiple visual variants and sizes. Supports polymorphism via asChild for rendering as links or other elements.",
     importCode: `import { Button } from "@/components/ui/button"`,
@@ -88,6 +90,7 @@ export const componentRegistry: ComponentMeta[] = [
   {
     slug: "card",
     name: "Card",
+    createdAt: "2026-02-15",
     description:
       "A container component with stone-textured background and beveled borders. Composed of Card, CardHeader, CardTitle, CardDescription, CardContent, and CardFooter sub-components.",
     importCode: `import {
@@ -124,6 +127,7 @@ export const componentRegistry: ComponentMeta[] = [
   {
     slug: "input",
     name: "Input",
+    createdAt: "2026-02-15",
     description:
       "A text input field with inset border styling. Supports all native HTML input attributes.",
     importCode: `import { Input } from "@/components/ui/input"`,
@@ -155,6 +159,7 @@ export const componentRegistry: ComponentMeta[] = [
   {
     slug: "badge",
     name: "Badge",
+    createdAt: "2026-02-15",
     description:
       "A small status indicator with OSRS-themed color variants. Useful for tags, labels, and status indicators.",
     importCode: `import { Badge } from "@/components/ui/badge"`,
@@ -181,6 +186,7 @@ export const componentRegistry: ComponentMeta[] = [
   {
     slug: "checkbox",
     name: "Checkbox",
+    createdAt: "2026-02-15",
     description:
       "A toggle checkbox built on Radix UI primitives. Displays a green check indicator when checked.",
     importCode: `import { Checkbox } from "@/components/ui/checkbox"`,
@@ -222,6 +228,7 @@ export const componentRegistry: ComponentMeta[] = [
   {
     slug: "dialog",
     name: "Dialog",
+    createdAt: "2026-02-15",
     description:
       "A modal dialog built on Radix UI. Features a dark overlay, stone-textured content panel, and a red close button. Composed of Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, and DialogFooter.",
     importCode: `import {
@@ -270,6 +277,7 @@ export const componentRegistry: ComponentMeta[] = [
   {
     slug: "select",
     name: "Select",
+    createdAt: "2026-02-15",
     description:
       "A dropdown select menu built on Radix UI. Features a chevron indicator, scrollable viewport, and green checkmarks for selected items.",
     importCode: `import {
@@ -316,6 +324,7 @@ export const componentRegistry: ComponentMeta[] = [
   {
     slug: "tabs",
     name: "Tabs",
+    createdAt: "2026-02-16",
     description:
       "A tabbed interface built on Radix UI. Active tabs display with a gold background. Content panels use stone-textured backgrounds.",
     importCode: `import {
@@ -360,6 +369,7 @@ export const componentRegistry: ComponentMeta[] = [
   {
     slug: "tooltip",
     name: "Tooltip",
+    createdAt: "2026-02-16",
     description:
       "A hover-activated tooltip built on Radix UI. Displays yellow text on a dark background with a drop shadow. Supports positioning on all four sides.",
     importCode: `import {
@@ -396,10 +406,13 @@ export const componentRegistry: ComponentMeta[] = [
   {
     slug: "progress",
     name: "Progress",
+    createdAt: "2026-02-16",
     description:
       "A progress bar with configurable fill color variants. Supports custom labels and value/max ranges. Features an inset border and text shadow overlay.",
     importCode: `import { Progress } from "@/components/ui/progress"`,
-    usageCode: `<Progress value={73} max={99} label="73/99" />
+    usageCode: `<Progress dynamicColor value={progress} max={99} label={\`\${progress}/99\`} />
+<Progress value={73} max={99} label="73/99" />
+<Progress variant="yellow" value={64} max={99} label="64/99" />
 <Progress variant="orange" value={54} max={99} label="54/99" />
 <Progress variant="red" value={18} max={99} label="18/99" />`,
     props: [
@@ -423,19 +436,27 @@ export const componentRegistry: ComponentMeta[] = [
       },
       {
         name: "variant",
-        type: '"default" | "orange" | "red"',
+        type: '"default" | "yellow" | "orange" | "red"',
         default: '"default"',
         description: "The fill color variant.",
       },
+      {
+        name: "dynamicColor",
+        type: "boolean",
+        default: "false",
+        description:
+          "Automatically sets fill color by threshold (red -> orange -> yellow -> green).",
+      },
     ],
     variants: [
-      { name: "variant", values: ["default", "orange", "red"] },
+      { name: "variant", values: ["default", "yellow", "orange", "red"] },
     ],
     demo: () => import("@/docs/demos/progress-demo"),
   },
   {
     slug: "copy-button",
     name: "CopyButton",
+    createdAt: "2026-02-15",
     description:
       "A button that copies text to the clipboard. Shows a green checkmark and 'Copied' confirmation for 2 seconds after clicking.",
     importCode: `import { CopyButton } from "@/components/ui/copy-button"`,

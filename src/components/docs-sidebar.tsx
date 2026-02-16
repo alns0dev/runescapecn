@@ -15,6 +15,16 @@ const linkClass = (isActive: boolean) =>
   )
 
 function DocsSidebar({ onNavigate }: DocsSidebarProps) {
+  const handleNavigate = () => {
+    if (!onNavigate) {
+      return
+    }
+
+    window.setTimeout(() => {
+      onNavigate()
+    }, 0)
+  }
+
   return (
     <nav className="py-4">
       {/* Getting Started */}
@@ -27,7 +37,7 @@ function DocsSidebar({ onNavigate }: DocsSidebarProps) {
         <li>
           <NavLink
             to="/docs/get-started"
-            onClick={onNavigate}
+            onClick={handleNavigate}
             className={({ isActive }) => linkClass(isActive)}
           >
             Get Started
@@ -36,7 +46,7 @@ function DocsSidebar({ onNavigate }: DocsSidebarProps) {
         <li>
           <NavLink
             to="/docs/fonts"
-            onClick={onNavigate}
+            onClick={handleNavigate}
             className={({ isActive }) => linkClass(isActive)}
           >
             Fonts
@@ -55,7 +65,7 @@ function DocsSidebar({ onNavigate }: DocsSidebarProps) {
           <li key={comp.slug}>
             <NavLink
               to={`/docs/components/${comp.slug}`}
-              onClick={onNavigate}
+              onClick={handleNavigate}
               className={({ isActive }) => linkClass(isActive)}
             >
               {comp.name}

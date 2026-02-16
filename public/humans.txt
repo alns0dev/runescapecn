@@ -1,0 +1,11 @@
+/* TEAM */
+Creator: Alonso Aguayo
+Contact: https://x.com/alns0_
+From: United States
+
+/* SITE */
+Site: runescapecn
+URL: https://runescapecn.com
+Stack: React 18, TypeScript, Vite, Tailwind CSS v4, shadcn/ui, Radix UI
+Fonts: RuneStar OSRS fonts
+Repository: https://github.com/alns0dev/runescapecn
