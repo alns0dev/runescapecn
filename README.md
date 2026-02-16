@@ -4,6 +4,8 @@ Old School RuneScape-themed UI components. Free. Open Source.
 
 A collection of accessible, retro-inspired UI components drawing from classic MMORPG aesthetics.
 
+<img src="public/logo.png" alt="runescapecn logo" width="120" />
+
 Visit [runescapecn.com](https://runescapecn.com/)
 
 ## Registry Install (shadcn CLI)
