@@ -1,0 +1,56 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "name": "runescape",
+  "type": "registry:style",
+  "tailwind": {
+    "config": {
+      "theme": {
+        "extend": {
+          "borderRadius": {
+            "lg": "0px",
+            "md": "0px",
+            "sm": "0px"
+          },
+          "colors": {
+            "rs-gold": "#C9A961",
+            "rs-orange": "#FF981F",
+            "rs-brown-dark": "#3E2C1E",
+            "rs-brown-medium": "#5C4033",
+            "rs-brown-light": "#8B7355",
+            "rs-green": "#00FF00",
+            "rs-red": "#FF0000",
+            "rs-yellow": "#FFEB3B",
+            "rs-cyan": "#00FFFF"
+          },
+          "fontFamily": {
+            "rs": ["Press Start 2P", "Courier New", "monospace"]
+          }
+        }
+      }
+    }
+  },
+  "cssVars": {
+    "light": {
+      "background": "25 35% 18%",
+      "foreground": "0 0% 100%",
+      "card": "25 30% 15%",
+      "card-foreground": "30 100% 56%",
+      "popover": "25 35% 18%",
+      "popover-foreground": "30 100% 56%",
+      "primary": "45 65% 58%",
+      "primary-foreground": "0 0% 0%",
+      "secondary": "25 20% 25%",
+      "secondary-foreground": "0 0% 100%",
+      "muted": "25 20% 25%",
+      "muted-foreground": "30 30% 70%",
+      "accent": "45 65% 58%",
+      "accent-foreground": "0 0% 0%",
+      "destructive": "0 100% 50%",
+      "destructive-foreground": "0 0% 100%",
+      "border": "0 0% 0%",
+      "input": "25 30% 25%",
+      "ring": "30 100% 56%",
+      "radius": "0px"
+    }
+  }
+}

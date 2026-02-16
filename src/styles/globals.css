@@ -1,0 +1,207 @@
+@import "tailwindcss";
+
+/* RuneStar OSRS Fonts - https://github.com/RuneStar/fonts (CC0-1.0) */
+
+@font-face {
+  font-family: 'RuneScape Plain 11';
+  src: url('/fonts/otf/RuneScape-Plain-11.otf') format('opentype'),
+       url('/fonts/ttf/RuneScape-Plain-11.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RuneScape Plain 12';
+  src: url('/fonts/otf/RuneScape-Plain-12.otf') format('opentype'),
+       url('/fonts/ttf/RuneScape-Plain-12.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RuneScape Bold 12';
+  src: url('/fonts/otf/RuneScape-Bold-12.otf') format('opentype'),
+       url('/fonts/ttf/RuneScape-Bold-12.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RuneScape Quill 8';
+  src: url('/fonts/otf/RuneScape-Quill-8.otf') format('opentype'),
+       url('/fonts/ttf/RuneScape-Quill-8.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RuneScape Quill';
+  src: url('/fonts/otf/RuneScape-Quill.otf') format('opentype'),
+       url('/fonts/ttf/RuneScape-Quill.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RuneScape Quill Caps';
+  src: url('/fonts/otf/RuneScape-Quill-Caps.otf') format('opentype'),
+       url('/fonts/ttf/RuneScape-Quill-Caps.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RuneScape Barbarian Assault';
+  src: url('/fonts/otf/RuneScape-Barbarian-Assault.otf') format('opentype'),
+       url('/fonts/ttf/RuneScape-Barbarian-Assault.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RuneScape Fairy';
+  src: url('/fonts/otf/RuneScape-Fairy.otf') format('opentype'),
+       url('/fonts/ttf/RuneScape-Fairy.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RuneScape Fairy Large';
+  src: url('/fonts/otf/RuneScape-Fairy-Large.otf') format('opentype'),
+       url('/fonts/ttf/RuneScape-Fairy-Large.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RuneScape Surok';
+  src: url('/fonts/otf/RuneScape-Surok.otf') format('opentype'),
+       url('/fonts/ttf/RuneScape-Surok.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  /* RS Primary Colors */
+  --color-rs-gold: #C9A961;
+  --color-rs-orange: #FF981F;
+  --color-rs-brown-dark: #1a1a1a;
+  --color-rs-brown-medium: #2a2a2a;
+  --color-rs-brown-light: #7a7a7a;
+  --color-rs-green: #00FF00;
+  --color-rs-red: #FF0000;
+  --color-rs-yellow: #FFEB3B;
+  --color-rs-cyan: #00FFFF;
+
+  /* Font families */
+  --font-rs: 'RuneScape Plain 12', 'RuneScape Plain 11', monospace;
+  --font-rs-bold: 'RuneScape Bold 12', 'RuneScape Plain 12', monospace;
+  --font-rs-quill: 'RuneScape Quill', 'RuneScape Quill 8', serif;
+  --font-rs-quill-caps: 'RuneScape Quill Caps', serif;
+}
+
+@layer base {
+  :root {
+    /* Semantic tokens */
+    --background: 0 0% 10%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 12%;
+    --card-foreground: 30 100% 56%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 30 100% 56%;
+
+    --primary: 45 65% 58%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 16%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 16%;
+    --muted-foreground: 0 0% 55%;
+
+    --accent: 45 65% 58%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 0%;
+    --input: 0 0% 18%;
+    --ring: 30 100% 56%;
+
+    --radius: 0px;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-rs);
+    font-size: 20px;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: auto;
+    image-rendering: pixelated;
+  }
+}
+
+@layer components {
+  /* RS-style raised border (buttons, cards) */
+  .rs-border {
+    border: 2px solid black;
+    box-shadow:
+      inset -1px -1px 0 rgba(0, 0, 0, 0.5),
+      inset 1px 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  /* RS-style inset border (inputs, wells) */
+  .rs-border-inset {
+    border: 2px solid black;
+    box-shadow:
+      inset 1px 1px 0 rgba(0, 0, 0, 0.7),
+      inset -1px -1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  /* RS-style raised border (prominent buttons) */
+  .rs-border-raised {
+    border: 2px solid black;
+    box-shadow:
+      inset 1px 1px 0 rgba(255, 255, 255, 0.2),
+      inset -1px -1px 0 rgba(0, 0, 0, 0.7);
+  }
+
+  /* Stone texture overlay via gradient */
+  .rs-stone-bg {
+    background-color: hsl(var(--card));
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.03) 2px,
+        rgba(0, 0, 0, 0.03) 4px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.03) 2px,
+        rgba(0, 0, 0, 0.03) 4px
+      );
+  }
+}
