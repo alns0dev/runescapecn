@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 import { Download } from "lucide-react"
+import { useHead } from "@/hooks/use-head"
 
 const fonts = [
   {
@@ -59,6 +60,11 @@ const fonts = [
 ]
 
 function FontsPage() {
+  useHead(
+    "Fonts",
+    "Download pixel-accurate OSRS fonts from RuneStar. RuneScape Plain, Bold, Quill, and more — all free under CC0-1.0 public domain license."
+  )
+
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])

@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom"
 
 import { componentRegistry } from "@/docs/registry"
 import { useGithubStars } from "@/hooks/use-github-stars"
+import { useHead } from "@/hooks/use-head"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -18,6 +19,13 @@ function App() {
   const { pathname } = useLocation()
 
   const isWhyPage = pathname === "/why"
+
+  useHead(
+    isWhyPage ? "Why RuneScapeCN" : undefined,
+    isWhyPage
+      ? "Why RuneScapeCN exists — a tribute to the iconic design language of Old School RuneScape, bringing OSRS visual DNA into reusable UI components."
+      : undefined
+  )
 
   const latestComponents = useMemo(
     () =>

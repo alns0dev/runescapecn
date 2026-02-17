@@ -8,6 +8,7 @@ import { DocsLayout } from './layouts/docs-layout.tsx'
 import { ComponentDocPage } from './pages/docs/components/component-doc-page.tsx'
 import { FontsPage } from './pages/docs/fonts-page.tsx'
 import { GetStartedPage } from './pages/docs/get-started-page.tsx'
+import { ChangelogPage } from './pages/docs/changelog-page.tsx'
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: 'fonts',
         element: <FontsPage />,
+      },
+      {
+        path: 'changelog',
+        element: <ChangelogPage />,
       },
       {
         path: 'components',

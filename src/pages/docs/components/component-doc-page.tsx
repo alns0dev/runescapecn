@@ -4,6 +4,7 @@ import { useParams, Navigate } from "react-router-dom"
 import { componentRegistry } from "@/docs/registry"
 import { CodeBlock } from "@/components/code-block"
 import { PropsTable } from "@/components/props-table"
+import { useHead } from "@/hooks/use-head"
 
 function ComponentDocPage() {
   const { slug } = useParams<{ slug: string }>()
@@ -13,6 +14,12 @@ function ComponentDocPage() {
   }, [slug])
 
   const meta = componentRegistry.find((c) => c.slug === slug && !c.hidden)
+
+  useHead(
+    meta ? `${meta.name} Component` : undefined,
+    meta?.description
+  )
+
   const installUrl = `https://runescapecn.com/r/${slug}.json`
 
   const Demo = useMemo(() => {

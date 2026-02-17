@@ -52,6 +52,15 @@ function DocsSidebar({ onNavigate }: DocsSidebarProps) {
             Fonts
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            to="/docs/changelog"
+            onClick={handleNavigate}
+            className={({ isActive }) => linkClass(isActive)}
+          >
+            Changelog
+          </NavLink>
+        </li>
       </ul>
 
       {/* Components */}

@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react"
 import { Copy, Check, ChevronDown, ExternalLink } from "lucide-react"
+import { useHead } from "@/hooks/use-head"
 
 const REPO_URL = "https://github.com/alns0dev/runescapecn"
 
@@ -274,6 +275,11 @@ function GetStartedPage() {
   const [copied, setCopied] = useState(false)
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
+
+  useHead(
+    "Get Started",
+    "Get started with runescapecn, an Old School RuneScape-themed UI component library built on shadcn/ui. Install components via the shadcn registry."
+  )
 
   useEffect(() => {
     window.scrollTo(0, 0)
