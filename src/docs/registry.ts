@@ -22,6 +22,7 @@ export interface ComponentMeta {
   props: PropDef[]
   variants: VariantDef[]
   demo: () => Promise<{ default: ComponentType }>
+  hidden?: boolean
 }
 
 export const componentRegistry: ComponentMeta[] = [
@@ -470,5 +471,203 @@ export const componentRegistry: ComponentMeta[] = [
     ],
     variants: [],
     demo: () => import("@/docs/demos/copy-button-demo"),
+  },
+  {
+    slug: "textarea",
+    name: "Textarea",
+    createdAt: "2026-02-16",
+    description:
+      "A multi-line text input styled like the OSRS chat input box. Supports resizing and all native textarea attributes.",
+    importCode: `import { Textarea } from "@/components/ui/textarea"`,
+    usageCode: `<Textarea placeholder="Type your message here..." />
+<Textarea placeholder="Describe your bug report..." />
+<Textarea disabled placeholder="Chat disabled in this area" />`,
+    props: [
+      {
+        name: "placeholder",
+        type: "string",
+        description: "Placeholder text displayed when the textarea is empty.",
+      },
+      {
+        name: "disabled",
+        type: "boolean",
+        default: "false",
+        description: "Disables the textarea.",
+      },
+    ],
+    variants: [],
+    demo: () => import("@/docs/demos/textarea-demo"),
+  },
+  {
+    slug: "label",
+    name: "Label",
+    createdAt: "2026-02-16",
+    description:
+      "An accessible form label built on Radix UI. Pairs with Input, Textarea, Checkbox, Switch, and Select for accessible form controls.",
+    importCode: `import { Label } from "@/components/ui/label"`,
+    usageCode: `<div className="space-y-2">
+  <Label htmlFor="username">Username</Label>
+  <Input id="username" placeholder="Enter your RSN" />
+</div>`,
+    props: [
+      {
+        name: "htmlFor",
+        type: "string",
+        description: "The ID of the form element this label is associated with.",
+      },
+    ],
+    variants: [],
+    demo: () => import("@/docs/demos/label-demo"),
+  },
+  {
+    slug: "switch",
+    name: "Switch",
+    createdAt: "2026-02-16",
+    description:
+      "A toggle switch built on Radix UI. Features a sliding thumb that turns green when checked. Complements Checkbox with a different interaction pattern.",
+    importCode: `import { Switch } from "@/components/ui/switch"`,
+    usageCode: `<div className="flex items-center gap-3">
+  <Switch id="run-mode" />
+  <Label htmlFor="run-mode">Run Mode</Label>
+</div>
+
+<div className="flex items-center gap-3">
+  <Switch id="retaliate" defaultChecked />
+  <Label htmlFor="retaliate">Auto Retaliate</Label>
+</div>`,
+    props: [
+      {
+        name: "checked",
+        type: "boolean",
+        description: "The controlled checked state.",
+      },
+      {
+        name: "defaultChecked",
+        type: "boolean",
+        description: "The default checked state for uncontrolled usage.",
+      },
+      {
+        name: "onCheckedChange",
+        type: "(checked: boolean) => void",
+        description: "Callback when checked state changes.",
+      },
+      {
+        name: "disabled",
+        type: "boolean",
+        default: "false",
+        description: "Disables the switch.",
+      },
+    ],
+    variants: [],
+    demo: () => import("@/docs/demos/switch-demo"),
+  },
+  {
+    slug: "separator",
+    name: "Separator",
+    createdAt: "2026-02-16",
+    description:
+      "A horizontal or vertical divider built on Radix UI. Uses a black border with a subtle bevel shadow to match the stone UI aesthetic.",
+    importCode: `import { Separator } from "@/components/ui/separator"`,
+    usageCode: `{/* Horizontal */}
+<p>Attack: 99</p>
+<Separator />
+<p>Strength: 99</p>
+
+{/* Vertical */}
+<div className="flex items-center gap-4 h-6">
+  <span>Melee</span>
+  <Separator orientation="vertical" />
+  <span>Ranged</span>
+</div>`,
+    props: [
+      {
+        name: "orientation",
+        type: '"horizontal" | "vertical"',
+        default: '"horizontal"',
+        description: "The orientation of the separator.",
+      },
+      {
+        name: "decorative",
+        type: "boolean",
+        default: "true",
+        description:
+          "When true, the separator is purely visual and not exposed to assistive technology.",
+      },
+    ],
+    variants: [],
+    demo: () => import("@/docs/demos/separator-demo"),
+  },
+  {
+    slug: "splatter-badge",
+    name: "SplatterBadge",
+    createdAt: "2026-02-16",
+    hidden: true,
+    description:
+      "A pixelated badge with a red splatter background displaying a number (0–999). Ideal for damage counts, kill counts, or level indicators in OSRS-style UIs.",
+    importCode: `import { SplatterBadge } from "@/components/ui/splatter-badge"`,
+    usageCode: `<SplatterBadge value={26} />
+<SplatterBadge value={99} />
+<SplatterBadge value={999} />`,
+    props: [
+      {
+        name: "value",
+        type: "number",
+        description:
+          "Number to display (0–999). Values outside this range are clamped.",
+      },
+    ],
+    variants: [],
+    demo: () => import("@/docs/demos/splatter-badge-demo"),
+  },
+  {
+    slug: "alert",
+    name: "Alert",
+    createdAt: "2026-02-16",
+    description:
+      "A notification component for showing important messages. Supports default, destructive, and success variants. Styled like OSRS game chat messages with a colored left border accent.",
+    importCode: `import {
+  Alert, AlertTitle, AlertDescription
+} from "@/components/ui/alert"`,
+    usageCode: `<Alert>
+  <AlertTitle>Game Update</AlertTitle>
+  <AlertDescription>
+    A system update will occur in 30 minutes.
+  </AlertDescription>
+</Alert>
+
+<Alert variant="destructive">
+  <AlertTitle>Warning</AlertTitle>
+  <AlertDescription>
+    This is a dangerous area.
+  </AlertDescription>
+</Alert>
+
+<Alert variant="success">
+  <AlertTitle>Quest Complete</AlertTitle>
+  <AlertDescription>
+    Congratulations! You have completed Dragon Slayer.
+  </AlertDescription>
+</Alert>`,
+    props: [
+      {
+        name: "variant",
+        type: '"default" | "destructive" | "success"',
+        default: '"default"',
+        description: "The visual style of the alert.",
+      },
+      {
+        name: "children",
+        type: "ReactNode",
+        description:
+          "Alert content, typically composed of AlertTitle and AlertDescription.",
+      },
+    ],
+    variants: [
+      {
+        name: "variant",
+        values: ["default", "destructive", "success"],
+      },
+    ],
+    demo: () => import("@/docs/demos/alert-demo"),
   },
 ]

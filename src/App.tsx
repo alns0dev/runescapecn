@@ -22,10 +22,13 @@ function App() {
   const latestComponents = useMemo(
     () =>
       [...componentRegistry]
-        .sort(
-          (a, b) =>
+        .filter((c) => !c.hidden)
+        .map((c, i) => ({ ...c, _index: i }))
+        .sort((a, b) => {
+          const diff =
             new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-        )
+          return diff !== 0 ? diff : b._index - a._index
+        })
         .slice(0, 3)
         .map((component) => ({
           ...component,

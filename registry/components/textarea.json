@@ -1,0 +1,12 @@
+{
+  "name": "textarea",
+  "type": "registry:ui",
+  "dependencies": ["clsx", "tailwind-merge"],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "ui/textarea.tsx",
+      "type": "registry:ui"
+    }
+  ]
+}

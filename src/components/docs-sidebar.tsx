@@ -61,7 +61,7 @@ function DocsSidebar({ onNavigate }: DocsSidebarProps) {
         </h3>
       </div>
       <ul className="space-y-0.5 px-2">
-        {componentRegistry.map((comp) => (
+        {componentRegistry.filter((c) => !c.hidden).map((comp) => (
           <li key={comp.slug}>
             <NavLink
               to={`/docs/components/${comp.slug}`}

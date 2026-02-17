@@ -12,7 +12,7 @@ function ComponentDocPage() {
     window.scrollTo(0, 0)
   }, [slug])
 
-  const meta = componentRegistry.find((c) => c.slug === slug)
+  const meta = componentRegistry.find((c) => c.slug === slug && !c.hidden)
   const installUrl = `https://runescapecn.com/r/${slug}.json`
 
   const Demo = useMemo(() => {

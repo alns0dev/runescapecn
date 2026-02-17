@@ -1,0 +1,16 @@
+{
+  "name": "alert",
+  "type": "registry:ui",
+  "dependencies": [
+    "class-variance-authority",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "ui/alert.tsx",
+      "type": "registry:ui"
+    }
+  ]
+}

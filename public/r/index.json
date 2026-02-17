@@ -1,7 +1,11 @@
 {
-  "generatedAt": "2026-02-16T15:38:55.919Z",
+  "generatedAt": "2026-02-17T04:01:36.084Z",
   "source": "registry/components",
   "components": [
+    {
+      "name": "alert",
+      "path": "/r/alert.json"
+    },
     {
       "name": "badge",
       "path": "/r/badge.json"
@@ -27,6 +31,10 @@
       "path": "/r/input.json"
     },
     {
+      "name": "label",
+      "path": "/r/label.json"
+    },
+    {
       "name": "progress",
       "path": "/r/progress.json"
     },
@@ -35,8 +43,20 @@
       "path": "/r/select.json"
     },
     {
+      "name": "separator",
+      "path": "/r/separator.json"
+    },
+    {
+      "name": "switch",
+      "path": "/r/switch.json"
+    },
+    {
       "name": "tabs",
       "path": "/r/tabs.json"
+    },
+    {
+      "name": "textarea",
+      "path": "/r/textarea.json"
     },
     {
       "name": "tooltip",
