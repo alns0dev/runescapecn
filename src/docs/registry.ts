@@ -21,7 +21,7 @@ export interface ComponentMeta {
   usageCode: string
   props: PropDef[]
   variants: VariantDef[]
-  demo: () => Promise<{ default: ComponentType }>
+  demo?: () => Promise<{ default: ComponentType }>
   hidden?: boolean
 }
 
@@ -617,7 +617,6 @@ export const componentRegistry: ComponentMeta[] = [
       },
     ],
     variants: [],
-    demo: () => import("@/docs/demos/splatter-badge-demo"),
   },
   {
     slug: "alert",

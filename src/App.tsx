@@ -32,7 +32,7 @@ function App() {
         .slice(0, 3)
         .map((component) => ({
           ...component,
-          Demo: lazy(component.demo),
+          Demo: lazy(component.demo!),
         })),
     []
   )

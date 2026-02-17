@@ -17,7 +17,7 @@ function ComponentDocPage() {
 
   const Demo = useMemo(() => {
     if (!meta) return null
-    return lazy(meta.demo)
+    return lazy(meta.demo!)
   }, [meta])
 
   if (!meta || !Demo) {
