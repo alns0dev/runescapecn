@@ -1,0 +1,20 @@
+{
+  "name": "toast",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-toast", "class-variance-authority", "clsx", "tailwind-merge", "lucide-react"],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "ui/toast.tsx",
+      "type": "registry:ui"
+    },
+    {
+      "path": "ui/use-toast.tsx",
+      "type": "registry:ui"
+    },
+    {
+      "path": "ui/toaster.tsx",
+      "type": "registry:ui"
+    }
+  ]
+}

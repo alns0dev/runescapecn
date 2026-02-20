@@ -1,14 +1,34 @@
 {
-  "generatedAt": "2026-02-17T17:56:46.349Z",
+  "generatedAt": "2026-02-20T22:38:48.543Z",
   "source": "registry/components",
   "components": [
+    {
+      "name": "accordion",
+      "path": "/r/accordion.json"
+    },
+    {
+      "name": "alert-dialog",
+      "path": "/r/alert-dialog.json"
+    },
     {
       "name": "alert",
       "path": "/r/alert.json"
     },
     {
+      "name": "aspect-ratio",
+      "path": "/r/aspect-ratio.json"
+    },
+    {
+      "name": "avatar",
+      "path": "/r/avatar.json"
+    },
+    {
       "name": "badge",
       "path": "/r/badge.json"
+    },
+    {
+      "name": "breadcrumb",
+      "path": "/r/breadcrumb.json"
     },
     {
       "name": "button",
@@ -23,8 +43,24 @@
       "path": "/r/checkbox.json"
     },
     {
+      "name": "collapsible",
+      "path": "/r/collapsible.json"
+    },
+    {
+      "name": "context-menu",
+      "path": "/r/context-menu.json"
+    },
+    {
       "name": "dialog",
       "path": "/r/dialog.json"
+    },
+    {
+      "name": "dropdown-menu",
+      "path": "/r/dropdown-menu.json"
+    },
+    {
+      "name": "hover-card",
+      "path": "/r/hover-card.json"
     },
     {
       "name": "input",
@@ -35,8 +71,32 @@
       "path": "/r/label.json"
     },
     {
+      "name": "menubar",
+      "path": "/r/menubar.json"
+    },
+    {
+      "name": "navigation-menu",
+      "path": "/r/navigation-menu.json"
+    },
+    {
+      "name": "pagination",
+      "path": "/r/pagination.json"
+    },
+    {
+      "name": "popover",
+      "path": "/r/popover.json"
+    },
+    {
       "name": "progress",
       "path": "/r/progress.json"
+    },
+    {
+      "name": "radio-group",
+      "path": "/r/radio-group.json"
+    },
+    {
+      "name": "scroll-area",
+      "path": "/r/scroll-area.json"
     },
     {
       "name": "select",
@@ -47,8 +107,24 @@
       "path": "/r/separator.json"
     },
     {
+      "name": "sheet",
+      "path": "/r/sheet.json"
+    },
+    {
+      "name": "skeleton",
+      "path": "/r/skeleton.json"
+    },
+    {
+      "name": "slider",
+      "path": "/r/slider.json"
+    },
+    {
       "name": "switch",
       "path": "/r/switch.json"
+    },
+    {
+      "name": "table",
+      "path": "/r/table.json"
     },
     {
       "name": "tabs",
@@ -57,6 +133,18 @@
     {
       "name": "textarea",
       "path": "/r/textarea.json"
+    },
+    {
+      "name": "toast",
+      "path": "/r/toast.json"
+    },
+    {
+      "name": "toggle-group",
+      "path": "/r/toggle-group.json"
+    },
+    {
+      "name": "toggle",
+      "path": "/r/toggle.json"
     },
     {
       "name": "tooltip",

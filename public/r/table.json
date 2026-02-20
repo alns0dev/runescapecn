@@ -1,0 +1,15 @@
+{
+  "name": "table",
+  "type": "registry:ui",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "ui/table.tsx",
+      "type": "registry:ui"
+    }
+  ]
+}

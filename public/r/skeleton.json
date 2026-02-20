@@ -1,0 +1,15 @@
+{
+  "name": "skeleton",
+  "type": "registry:ui",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "ui/skeleton.tsx",
+      "type": "registry:ui"
+    }
+  ]
+}

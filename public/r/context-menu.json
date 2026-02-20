@@ -1,0 +1,17 @@
+{
+  "name": "context-menu",
+  "type": "registry:ui",
+  "dependencies": [
+    "@radix-ui/react-context-menu",
+    "clsx",
+    "tailwind-merge",
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "ui/context-menu.tsx",
+      "type": "registry:ui"
+    }
+  ]
+}

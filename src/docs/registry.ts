@@ -669,4 +669,776 @@ export const componentRegistry: ComponentMeta[] = [
     ],
     demo: () => import("@/docs/demos/alert-demo"),
   },
+  // Phase 1 — Foundation
+  {
+    slug: "table",
+    name: "Table",
+    createdAt: "2026-02-20",
+    description:
+      "A set of table components for displaying structured data. Includes Table, TableHeader, TableBody, TableFooter, TableHead, TableRow, TableCell, and TableCaption sub-components. Perfect for hiscores, GE price lists, and stat displays.",
+    importCode: `import {
+  Table, TableHeader, TableBody, TableFooter,
+  TableHead, TableRow, TableCell, TableCaption
+} from "@/components/ui/table"`,
+    usageCode: `<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Rank</TableHead>
+      <TableHead>Player</TableHead>
+      <TableHead>Level</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>1</TableCell>
+      <TableCell>Zezima</TableCell>
+      <TableCell>99</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>`,
+    props: [
+      {
+        name: "className",
+        type: "string",
+        description: "Additional CSS classes to apply.",
+      },
+    ],
+    variants: [],
+    demo: () => import("@/docs/demos/table-demo"),
+  },
+  {
+    slug: "skeleton",
+    name: "Skeleton",
+    createdAt: "2026-02-20",
+    description:
+      "A loading placeholder with a shimmer animation. Use to represent content that is still loading, such as GE prices, hiscores data, or player profiles.",
+    importCode: `import { Skeleton } from "@/components/ui/skeleton"`,
+    usageCode: `<div className="flex items-center gap-4">
+  <Skeleton className="h-12 w-12" />
+  <div className="space-y-2">
+    <Skeleton className="h-4 w-[200px]" />
+    <Skeleton className="h-4 w-[140px]" />
+  </div>
+</div>`,
+    props: [
+      {
+        name: "className",
+        type: "string",
+        description:
+          "CSS classes for sizing (h-*, w-*). The component is a div with shimmer animation.",
+      },
+    ],
+    variants: [],
+    demo: () => import("@/docs/demos/skeleton-demo"),
+  },
+  {
+    slug: "avatar",
+    name: "Avatar",
+    createdAt: "2026-02-20",
+    description:
+      "An image element with a fallback for representing the user. Built on Radix UI Avatar. Composed of Avatar, AvatarImage, and AvatarFallback sub-components.",
+    importCode: `import {
+  Avatar, AvatarImage, AvatarFallback
+} from "@/components/ui/avatar"`,
+    usageCode: `<Avatar>
+  <AvatarImage src="/player.png" alt="Player" />
+  <AvatarFallback>ZZ</AvatarFallback>
+</Avatar>`,
+    props: [
+      {
+        name: "className",
+        type: "string",
+        description: "Additional CSS classes. Use h-* w-* for sizing.",
+      },
+    ],
+    variants: [],
+    demo: () => import("@/docs/demos/avatar-demo"),
+  },
+  // Phase 2 — Menus
+  {
+    slug: "context-menu",
+    name: "Context Menu",
+    createdAt: "2026-02-20",
+    description:
+      "A right-click context menu built on Radix UI. THE signature OSRS interaction — right-click to Attack, Trade, Follow, Examine. Supports sub-menus, checkboxes, radio items, and separators.",
+    importCode: `import {
+  ContextMenu, ContextMenuTrigger, ContextMenuContent,
+  ContextMenuItem, ContextMenuSeparator
+} from "@/components/ui/context-menu"`,
+    usageCode: `<ContextMenu>
+  <ContextMenuTrigger>Right-click me</ContextMenuTrigger>
+  <ContextMenuContent>
+    <ContextMenuItem>Attack Guard (lvl-21)</ContextMenuItem>
+    <ContextMenuItem>Talk-to Guard</ContextMenuItem>
+    <ContextMenuSeparator />
+    <ContextMenuItem>Cancel</ContextMenuItem>
+  </ContextMenuContent>
+</ContextMenu>`,
+    props: [
+      {
+        name: "children",
+        type: "ReactNode",
+        description: "Context menu sub-components (Trigger, Content, etc.).",
+      },
+    ],
+    variants: [],
+    demo: () => import("@/docs/demos/context-menu-demo"),
+  },
+  {
+    slug: "dropdown-menu",
+    name: "Dropdown Menu",
+    createdAt: "2026-02-20",
+    description:
+      "A dropdown menu built on Radix UI. Ideal for settings panels, combat style selectors, and action menus. Supports sub-menus, checkboxes, radio groups, and keyboard shortcuts.",
+    importCode: `import {
+  DropdownMenu, DropdownMenuTrigger, DropdownMenuContent,
+  DropdownMenuItem, DropdownMenuSeparator, DropdownMenuLabel
+} from "@/components/ui/dropdown-menu"`,
+    usageCode: `<DropdownMenu>
+  <DropdownMenuTrigger asChild>
+    <Button>Settings</Button>
+  </DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuLabel>Options</DropdownMenuLabel>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem>Audio</DropdownMenuItem>
+    <DropdownMenuItem>Display</DropdownMenuItem>
+    <DropdownMenuItem>Logout</DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>`,
+    props: [
+      {
+        name: "children",
+        type: "ReactNode",
+        description: "Dropdown menu sub-components (Trigger, Content, etc.).",
+      },
+    ],
+    variants: [],
+    demo: () => import("@/docs/demos/dropdown-menu-demo"),
+  },
+  {
+    slug: "alert-dialog",
+    name: "Alert Dialog",
+    createdAt: "2026-02-20",
+    description:
+      "A modal confirmation dialog built on Radix UI. Requires explicit user action to dismiss. Ideal for dangerous confirmations like 'Drop Dragon Scimitar?' or 'Enter Wilderness?'.",
+    importCode: `import {
+  AlertDialog, AlertDialogTrigger, AlertDialogContent,
+  AlertDialogHeader, AlertDialogTitle, AlertDialogDescription,
+  AlertDialogFooter, AlertDialogAction, AlertDialogCancel
+} from "@/components/ui/alert-dialog"`,
+    usageCode: `<AlertDialog>
+  <AlertDialogTrigger asChild>
+    <Button variant="destructive">Drop Item</Button>
+  </AlertDialogTrigger>
+  <AlertDialogContent>
+    <AlertDialogHeader>
+      <AlertDialogTitle>Drop Dragon Scimitar?</AlertDialogTitle>
+      <AlertDialogDescription>
+        This item will appear on the ground.
+      </AlertDialogDescription>
+    </AlertDialogHeader>
+    <AlertDialogFooter>
+      <AlertDialogCancel>Keep</AlertDialogCancel>
+      <AlertDialogAction>Drop</AlertDialogAction>
+    </AlertDialogFooter>
+  </AlertDialogContent>
+</AlertDialog>`,
+    props: [
+      {
+        name: "open",
+        type: "boolean",
+        description: "Controlled open state.",
+      },
+      {
+        name: "onOpenChange",
+        type: "(open: boolean) => void",
+        description: "Callback when open state changes.",
+      },
+    ],
+    variants: [],
+    demo: () => import("@/docs/demos/alert-dialog-demo"),
+  },
+  // Phase 3 — Interactive Controls
+  {
+    slug: "toast",
+    name: "Toast",
+    createdAt: "2026-02-20",
+    description:
+      "A temporary notification popup. Ideal for game notifications like 'Level up!', 'Rare drop!', or 'GE offer complete!'. Supports default, destructive, and success variants with a colored left border accent.",
+    importCode: `import { useToast } from "@/components/ui/use-toast"
+import { Toaster } from "@/components/ui/toaster"`,
+    usageCode: `const { toast } = useToast()
+
+// In your component:
+<Toaster />
+
+// To trigger:
+toast({
+  title: "Level Up!",
+  description: "Your Attack level is now 73.",
+})`,
+    props: [
+      {
+        name: "variant",
+        type: '"default" | "destructive" | "success"',
+        default: '"default"',
+        description: "The visual variant of the toast.",
+      },
+      {
+        name: "title",
+        type: "ReactNode",
+        description: "The toast title.",
+      },
+      {
+        name: "description",
+        type: "ReactNode",
+        description: "The toast description.",
+      },
+    ],
+    variants: [
+      {
+        name: "variant",
+        values: ["default", "destructive", "success"],
+      },
+    ],
+    demo: () => import("@/docs/demos/toast-demo"),
+  },
+  {
+    slug: "slider",
+    name: "Slider",
+    createdAt: "2026-02-20",
+    description:
+      "A range slider input built on Radix UI. Perfect for OSRS settings like music/SFX volume and brightness controls.",
+    importCode: `import { Slider } from "@/components/ui/slider"`,
+    usageCode: `<Slider defaultValue={[50]} max={100} step={1} />`,
+    props: [
+      {
+        name: "defaultValue",
+        type: "number[]",
+        description: "The default value(s) of the slider.",
+      },
+      {
+        name: "value",
+        type: "number[]",
+        description: "The controlled value(s).",
+      },
+      {
+        name: "onValueChange",
+        type: "(value: number[]) => void",
+        description: "Callback when the value changes.",
+      },
+      {
+        name: "max",
+        type: "number",
+        default: "100",
+        description: "The maximum value.",
+      },
+      {
+        name: "step",
+        type: "number",
+        default: "1",
+        description: "The step increment.",
+      },
+      {
+        name: "disabled",
+        type: "boolean",
+        default: "false",
+        description: "Disables the slider.",
+      },
+    ],
+    variants: [],
+    demo: () => import("@/docs/demos/slider-demo"),
+  },
+  {
+    slug: "radio-group",
+    name: "Radio Group",
+    createdAt: "2026-02-20",
+    description:
+      "A set of radio buttons built on Radix UI. Ideal for combat style selection (Accurate/Aggressive/Defensive/Controlled) and other single-choice options.",
+    importCode: `import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"`,
+    usageCode: `<RadioGroup defaultValue="accurate">
+  <div className="flex items-center gap-2">
+    <RadioGroupItem value="accurate" id="accurate" />
+    <Label htmlFor="accurate">Accurate</Label>
+  </div>
+  <div className="flex items-center gap-2">
+    <RadioGroupItem value="aggressive" id="aggressive" />
+    <Label htmlFor="aggressive">Aggressive</Label>
+  </div>
+</RadioGroup>`,
+    props: [
+      {
+        name: "defaultValue",
+        type: "string",
+        description: "The default selected value.",
+      },
+      {
+        name: "value",
+        type: "string",
+        description: "The controlled selected value.",
+      },
+      {
+        name: "onValueChange",
+        type: "(value: string) => void",
+        description: "Callback when the value changes.",
+      },
+    ],
+    variants: [],
+    demo: () => import("@/docs/demos/radio-group-demo"),
+  },
+  {
+    slug: "toggle",
+    name: "Toggle",
+    createdAt: "2026-02-20",
+    description:
+      "A two-state toggle button built on Radix UI. Perfect for prayer panel toggles, special attack, and run mode. Also includes ToggleGroup for grouping multiple toggles.",
+    importCode: `import { Toggle } from "@/components/ui/toggle"
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"`,
+    usageCode: `<Toggle aria-label="Toggle run mode">Run</Toggle>
+
+<ToggleGroup type="single" defaultValue="melee">
+  <ToggleGroupItem value="melee">Melee</ToggleGroupItem>
+  <ToggleGroupItem value="ranged">Ranged</ToggleGroupItem>
+  <ToggleGroupItem value="magic">Magic</ToggleGroupItem>
+</ToggleGroup>`,
+    props: [
+      {
+        name: "variant",
+        type: '"default" | "outline"',
+        default: '"default"',
+        description: "The visual style of the toggle.",
+      },
+      {
+        name: "size",
+        type: '"default" | "sm" | "lg"',
+        default: '"default"',
+        description: "The size of the toggle.",
+      },
+      {
+        name: "pressed",
+        type: "boolean",
+        description: "The controlled pressed state.",
+      },
+      {
+        name: "onPressedChange",
+        type: "(pressed: boolean) => void",
+        description: "Callback when pressed state changes.",
+      },
+    ],
+    variants: [
+      { name: "variant", values: ["default", "outline"] },
+      { name: "size", values: ["default", "sm", "lg"] },
+    ],
+    demo: () => import("@/docs/demos/toggle-demo"),
+  },
+  {
+    slug: "toggle-group",
+    name: "Toggle Group",
+    createdAt: "2026-02-20",
+    description:
+      "A group of toggle buttons where one or multiple can be active. Built on Radix UI. Ideal for combat style selectors, prayer panels, and display mode switches.",
+    importCode: `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"`,
+    usageCode: `<ToggleGroup type="single" defaultValue="melee">
+  <ToggleGroupItem value="melee">Melee</ToggleGroupItem>
+  <ToggleGroupItem value="ranged">Ranged</ToggleGroupItem>
+  <ToggleGroupItem value="magic">Magic</ToggleGroupItem>
+</ToggleGroup>
+
+{/* Multiple selection */}
+<ToggleGroup type="multiple">
+  <ToggleGroupItem value="protect-melee">Protect Melee</ToggleGroupItem>
+  <ToggleGroupItem value="protect-range">Protect Range</ToggleGroupItem>
+</ToggleGroup>`,
+    props: [
+      {
+        name: "type",
+        type: '"single" | "multiple"',
+        description: "Whether one or multiple items can be toggled.",
+      },
+      {
+        name: "value",
+        type: "string | string[]",
+        description: "The controlled value(s).",
+      },
+      {
+        name: "onValueChange",
+        type: "(value: string | string[]) => void",
+        description: "Callback when the value changes.",
+      },
+      {
+        name: "variant",
+        type: '"default" | "outline"',
+        default: '"default"',
+        description: "The visual style applied to all items.",
+      },
+      {
+        name: "size",
+        type: '"default" | "sm" | "lg"',
+        default: '"default"',
+        description: "The size applied to all items.",
+      },
+    ],
+    variants: [
+      { name: "variant", values: ["default", "outline"] },
+      { name: "size", values: ["default", "sm", "lg"] },
+    ],
+    demo: () => import("@/docs/demos/toggle-group-demo"),
+  },
+  // Phase 4 — Floating UI & Panels
+  {
+    slug: "popover",
+    name: "Popover",
+    createdAt: "2026-02-20",
+    description:
+      "A floating panel triggered by a button click. Built on Radix UI. Ideal for item examine popups, GE search results, and map location info.",
+    importCode: `import {
+  Popover, PopoverTrigger, PopoverContent
+} from "@/components/ui/popover"`,
+    usageCode: `<Popover>
+  <PopoverTrigger asChild>
+    <Button>Examine</Button>
+  </PopoverTrigger>
+  <PopoverContent>
+    <p>A weapon from the Abyss.</p>
+  </PopoverContent>
+</Popover>`,
+    props: [
+      {
+        name: "open",
+        type: "boolean",
+        description: "Controlled open state.",
+      },
+      {
+        name: "onOpenChange",
+        type: "(open: boolean) => void",
+        description: "Callback when open state changes.",
+      },
+    ],
+    variants: [],
+    demo: () => import("@/docs/demos/popover-demo"),
+  },
+  {
+    slug: "hover-card",
+    name: "Hover Card",
+    createdAt: "2026-02-20",
+    description:
+      "A floating card that appears on hover. Built on Radix UI. Ideal for showing player stats, item info, or NPC details on hover.",
+    importCode: `import {
+  HoverCard, HoverCardTrigger, HoverCardContent
+} from "@/components/ui/hover-card"`,
+    usageCode: `<HoverCard>
+  <HoverCardTrigger>Zezima</HoverCardTrigger>
+  <HoverCardContent>
+    <p>Combat Level: 126</p>
+    <p>Total Level: 2277</p>
+  </HoverCardContent>
+</HoverCard>`,
+    props: [
+      {
+        name: "openDelay",
+        type: "number",
+        default: "700",
+        description: "Delay in ms before the hover card opens.",
+      },
+      {
+        name: "closeDelay",
+        type: "number",
+        default: "300",
+        description: "Delay in ms before the hover card closes.",
+      },
+    ],
+    variants: [],
+    demo: () => import("@/docs/demos/hover-card-demo"),
+  },
+  {
+    slug: "sheet",
+    name: "Sheet",
+    createdAt: "2026-02-20",
+    description:
+      "A slide-out panel (drawer) built on Radix UI Dialog. Supports top, right, bottom, and left sides. Ideal for inventory panels, equipment screens, and quest logs.",
+    importCode: `import {
+  Sheet, SheetTrigger, SheetContent,
+  SheetHeader, SheetTitle, SheetDescription
+} from "@/components/ui/sheet"`,
+    usageCode: `<Sheet>
+  <SheetTrigger asChild>
+    <Button>Inventory</Button>
+  </SheetTrigger>
+  <SheetContent>
+    <SheetHeader>
+      <SheetTitle>Inventory</SheetTitle>
+      <SheetDescription>28 slots</SheetDescription>
+    </SheetHeader>
+    <div className="p-4">Items here</div>
+  </SheetContent>
+</Sheet>`,
+    props: [
+      {
+        name: "side",
+        type: '"top" | "right" | "bottom" | "left"',
+        default: '"right"',
+        description: "The side the sheet slides in from.",
+      },
+      {
+        name: "open",
+        type: "boolean",
+        description: "Controlled open state.",
+      },
+      {
+        name: "onOpenChange",
+        type: "(open: boolean) => void",
+        description: "Callback when open state changes.",
+      },
+    ],
+    variants: [
+      { name: "side", values: ["top", "right", "bottom", "left"] },
+    ],
+    demo: () => import("@/docs/demos/sheet-demo"),
+  },
+  {
+    slug: "scroll-area",
+    name: "Scroll Area",
+    createdAt: "2026-02-20",
+    description:
+      "A custom scrollable area with themed scrollbars built on Radix UI. Ideal for chat boxes, quest logs, and friends lists.",
+    importCode: `import { ScrollArea } from "@/components/ui/scroll-area"`,
+    usageCode: `<ScrollArea className="h-48 w-60 border-2 border-black rs-stone-bg">
+  <div className="p-3">
+    {items.map((item) => (
+      <div key={item}>{item}</div>
+    ))}
+  </div>
+</ScrollArea>`,
+    props: [
+      {
+        name: "className",
+        type: "string",
+        description: "CSS classes for sizing the scroll area container.",
+      },
+    ],
+    variants: [],
+    demo: () => import("@/docs/demos/scroll-area-demo"),
+  },
+  {
+    slug: "aspect-ratio",
+    name: "Aspect Ratio",
+    createdAt: "2026-02-20",
+    description:
+      "Displays content within a desired ratio. Built on Radix UI. Ideal for maintaining correct proportions for item sprites, portraits, and map tiles.",
+    importCode: `import { AspectRatio } from "@/components/ui/aspect-ratio"`,
+    usageCode: `<div className="w-[400px]">
+  <AspectRatio ratio={16 / 9}>
+    <img src="/map.png" alt="World Map" />
+  </AspectRatio>
+</div>`,
+    props: [
+      {
+        name: "ratio",
+        type: "number",
+        default: "1",
+        description: "The desired aspect ratio (width / height).",
+      },
+    ],
+    variants: [],
+    demo: () => import("@/docs/demos/aspect-ratio-demo"),
+  },
+  // Phase 5 — Layout & Navigation
+  {
+    slug: "accordion",
+    name: "Accordion",
+    createdAt: "2026-02-20",
+    description:
+      "A vertically stacked set of collapsible sections built on Radix UI. Ideal for quest journal sections, skill guides, and expandable FAQ.",
+    importCode: `import {
+  Accordion, AccordionItem,
+  AccordionTrigger, AccordionContent
+} from "@/components/ui/accordion"`,
+    usageCode: `<Accordion type="single" collapsible>
+  <AccordionItem value="item-1">
+    <AccordionTrigger>Free Quests</AccordionTrigger>
+    <AccordionContent>
+      Cook's Assistant, Dragon Slayer...
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>`,
+    props: [
+      {
+        name: "type",
+        type: '"single" | "multiple"',
+        description: "Whether one or multiple items can be opened.",
+      },
+      {
+        name: "collapsible",
+        type: "boolean",
+        default: "false",
+        description: "When type is single, allows closing all items.",
+      },
+    ],
+    variants: [],
+    demo: () => import("@/docs/demos/accordion-demo"),
+  },
+  {
+    slug: "breadcrumb",
+    name: "Breadcrumb",
+    createdAt: "2026-02-20",
+    description:
+      "A navigation breadcrumb trail. Pure HTML/aria with no Radix dependency. Shows paths like 'Home > Skills > Attack'.",
+    importCode: `import {
+  Breadcrumb, BreadcrumbList, BreadcrumbItem,
+  BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator
+} from "@/components/ui/breadcrumb"`,
+    usageCode: `<Breadcrumb>
+  <BreadcrumbList>
+    <BreadcrumbItem>
+      <BreadcrumbLink href="#">Home</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbPage>Attack</BreadcrumbPage>
+    </BreadcrumbItem>
+  </BreadcrumbList>
+</Breadcrumb>`,
+    props: [
+      {
+        name: "children",
+        type: "ReactNode",
+        description: "Breadcrumb sub-components.",
+      },
+    ],
+    variants: [],
+    demo: () => import("@/docs/demos/breadcrumb-demo"),
+  },
+  {
+    slug: "pagination",
+    name: "Pagination",
+    createdAt: "2026-02-20",
+    description:
+      "A page navigation component using the existing Button styling. Includes Previous, Next, page links, and ellipsis indicators. Ideal for hiscores and GE listing pages.",
+    importCode: `import {
+  Pagination, PaginationContent, PaginationItem,
+  PaginationLink, PaginationPrevious, PaginationNext,
+  PaginationEllipsis
+} from "@/components/ui/pagination"`,
+    usageCode: `<Pagination>
+  <PaginationContent>
+    <PaginationItem>
+      <PaginationPrevious href="#" />
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationLink href="#" isActive>1</PaginationLink>
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationLink href="#">2</PaginationLink>
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationNext href="#" />
+    </PaginationItem>
+  </PaginationContent>
+</Pagination>`,
+    props: [
+      {
+        name: "isActive",
+        type: "boolean",
+        description: "Whether a PaginationLink is the current page.",
+      },
+    ],
+    variants: [],
+    demo: () => import("@/docs/demos/pagination-demo"),
+  },
+  {
+    slug: "collapsible",
+    name: "Collapsible",
+    createdAt: "2026-02-20",
+    description:
+      "A lightweight expand/collapse component built on Radix UI. Simpler than Accordion for single sections. Ideal for chat sections and sidebars.",
+    importCode: `import {
+  Collapsible, CollapsibleTrigger, CollapsibleContent
+} from "@/components/ui/collapsible"`,
+    usageCode: `<Collapsible>
+  <CollapsibleTrigger>Toggle Chat</CollapsibleTrigger>
+  <CollapsibleContent>
+    Chat messages here...
+  </CollapsibleContent>
+</Collapsible>`,
+    props: [
+      {
+        name: "open",
+        type: "boolean",
+        description: "Controlled open state.",
+      },
+      {
+        name: "onOpenChange",
+        type: "(open: boolean) => void",
+        description: "Callback when open state changes.",
+      },
+    ],
+    variants: [],
+    demo: () => import("@/docs/demos/collapsible-demo"),
+  },
+  {
+    slug: "menubar",
+    name: "Menubar",
+    createdAt: "2026-02-20",
+    description:
+      "A horizontal menu bar built on Radix UI. Supports sub-menus, checkboxes, radio groups, and keyboard shortcuts. Ideal for application-level navigation in OSRS-themed apps.",
+    importCode: `import {
+  Menubar, MenubarMenu, MenubarTrigger,
+  MenubarContent, MenubarItem, MenubarSeparator
+} from "@/components/ui/menubar"`,
+    usageCode: `<Menubar>
+  <MenubarMenu>
+    <MenubarTrigger>File</MenubarTrigger>
+    <MenubarContent>
+      <MenubarItem>New World</MenubarItem>
+      <MenubarItem>Open Save</MenubarItem>
+      <MenubarSeparator />
+      <MenubarItem>Logout</MenubarItem>
+    </MenubarContent>
+  </MenubarMenu>
+</Menubar>`,
+    props: [
+      {
+        name: "children",
+        type: "ReactNode",
+        description: "MenubarMenu sub-components.",
+      },
+    ],
+    variants: [],
+    demo: () => import("@/docs/demos/menubar-demo"),
+  },
+  {
+    slug: "navigation-menu",
+    name: "Navigation Menu",
+    createdAt: "2026-02-20",
+    description:
+      "A complex navigation component with nested content panels. Built on Radix UI. Ideal for wiki-style navigation with categorized links.",
+    importCode: `import {
+  NavigationMenu, NavigationMenuList,
+  NavigationMenuItem, NavigationMenuTrigger,
+  NavigationMenuContent, NavigationMenuLink
+} from "@/components/ui/navigation-menu"`,
+    usageCode: `<NavigationMenu>
+  <NavigationMenuList>
+    <NavigationMenuItem>
+      <NavigationMenuTrigger>Skills</NavigationMenuTrigger>
+      <NavigationMenuContent>
+        <ul className="grid gap-2 p-4 w-[400px]">
+          <li>Combat Skills</li>
+          <li>Gathering Skills</li>
+        </ul>
+      </NavigationMenuContent>
+    </NavigationMenuItem>
+  </NavigationMenuList>
+</NavigationMenu>`,
+    props: [
+      {
+        name: "children",
+        type: "ReactNode",
+        description: "Navigation menu sub-components.",
+      },
+    ],
+    variants: [],
+    demo: () => import("@/docs/demos/navigation-menu-demo"),
+  },
 ]

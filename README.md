@@ -24,7 +24,7 @@ runescapecn brings OSRS visual DNA into reusable components: hard edges, beveled
 
 - Classic OSRS inspired borders, beveled 3D shadows, and zero border-radius
 - Authentic [RuneStar](https://github.com/RuneStar/fonts) fonts (CC0-1.0, public domain)
-- 16 accessible components: Button, Card, Dialog, Select, Tabs, Input, Textarea, Checkbox, Label, Badge, Switch, Separator, Alert, Tooltip, Progress, CopyButton
+- 38 accessible components: Button, Card, Dialog, Select, Tabs, Input, Textarea, Checkbox, Label, Badge, Switch, Separator, Alert, Tooltip, Progress, CopyButton, Table, Skeleton, Avatar, Context Menu, Dropdown Menu, Alert Dialog, Toast, Slider, Radio Group, Toggle, Toggle Group, Popover, Hover Card, Sheet, Scroll Area, Accordion, Breadcrumb, Pagination, Collapsible, Menubar, Navigation Menu, Aspect Ratio
 - Built on React 19, TypeScript, Tailwind CSS v4, Radix UI, and Class Variance Authority
 - Copy-paste friendly — every component is a single file you own
 

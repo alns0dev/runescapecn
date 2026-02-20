@@ -185,6 +185,12 @@
       inset -1px -1px 0 rgba(0, 0, 0, 0.7);
   }
 
+  /* Skeleton shimmer animation */
+  @keyframes rs-shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
   /* Stone texture overlay via gradient */
   .rs-stone-bg {
     background-color: hsl(var(--card));

@@ -1,0 +1,12 @@
+{
+  "name": "alert-dialog",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-alert-dialog", "clsx", "tailwind-merge"],
+  "registryDependencies": ["button"],
+  "files": [
+    {
+      "path": "ui/alert-dialog.tsx",
+      "type": "registry:ui"
+    }
+  ]
+}

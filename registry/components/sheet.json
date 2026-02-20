@@ -1,0 +1,12 @@
+{
+  "name": "sheet",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-dialog", "class-variance-authority", "clsx", "tailwind-merge", "lucide-react"],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "ui/sheet.tsx",
+      "type": "registry:ui"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "toggle-group",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-toggle-group", "clsx", "tailwind-merge"],
+  "registryDependencies": ["toggle"],
+  "files": [
+    {
+      "path": "ui/toggle-group.tsx",
+      "type": "registry:ui"
+    }
+  ]
+}

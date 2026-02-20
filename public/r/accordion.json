@@ -1,0 +1,17 @@
+{
+  "name": "accordion",
+  "type": "registry:ui",
+  "dependencies": [
+    "@radix-ui/react-accordion",
+    "clsx",
+    "tailwind-merge",
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "ui/accordion.tsx",
+      "type": "registry:ui"
+    }
+  ]
+}

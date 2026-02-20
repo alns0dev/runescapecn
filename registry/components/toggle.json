@@ -1,0 +1,12 @@
+{
+  "name": "toggle",
+  "type": "registry:ui",
+  "dependencies": ["@radix-ui/react-toggle", "class-variance-authority", "clsx", "tailwind-merge"],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "ui/toggle.tsx",
+      "type": "registry:ui"
+    }
+  ]
+}
