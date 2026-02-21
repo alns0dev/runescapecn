@@ -1,8 +1,14 @@
 {
   "name": "separator",
   "type": "registry:ui",
-  "dependencies": ["@radix-ui/react-separator", "clsx", "tailwind-merge"],
-  "registryDependencies": [],
+  "dependencies": [
+    "@radix-ui/react-separator",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [
+    "styles/runescape.json"
+  ],
   "files": [
     {
       "path": "ui/separator.tsx",

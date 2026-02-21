@@ -109,6 +109,28 @@
   --font-rs-bold: 'RuneScape Bold 12', 'RuneScape Plain 12', monospace;
   --font-rs-quill: 'RuneScape Quill', 'RuneScape Quill 8', serif;
   --font-rs-quill-caps: 'RuneScape Quill Caps', serif;
+
+  /* Accordion animation tokens used by animate-accordion-* utilities */
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
 }
 
 @layer base {

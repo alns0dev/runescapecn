@@ -16,6 +16,27 @@ async function readJson(filePath) {
   return JSON.parse(raw)
 }
 
+async function loadRegistryFileContent(registryFilePath) {
+  const candidates = [
+    path.join(projectRoot, "src", "components", registryFilePath),
+    path.join(projectRoot, "src", registryFilePath),
+    path.join(projectRoot, registryFilePath),
+  ]
+
+  for (const candidate of candidates) {
+    try {
+      return await readFile(candidate, "utf8")
+    } catch (error) {
+      if (error && typeof error === "object" && error.code === "ENOENT") {
+        continue
+      }
+      throw error
+    }
+  }
+
+  throw new Error(`Could not resolve file content for registry path: ${registryFilePath}`)
+}
+
 async function main() {
   await rm(outputDir, { recursive: true, force: true })
   await mkdir(outputDir, { recursive: true })
@@ -39,6 +60,15 @@ async function main() {
     const sourcePath = path.join(componentsDir, fileName)
     const targetPath = path.join(outputDir, fileName)
     const json = await readJson(sourcePath)
+    const files = Array.isArray(json.files) ? json.files : []
+
+    for (const file of files) {
+      if (!file || typeof file.path !== "string" || file.path.length === 0) {
+        continue
+      }
+
+      file.content = await loadRegistryFileContent(file.path)
+    }
 
     await writeFile(targetPath, JSON.stringify(json, null, 2) + "\n", "utf8")
 

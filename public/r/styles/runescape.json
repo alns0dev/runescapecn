@@ -1,6 +1,50 @@
 {
+  "$schema": "https://ui.shadcn.com/schema.json",
   "name": "runescape",
   "label": "RuneScape",
+  "type": "registry:style",
+  "tailwind": {
+    "config": {
+      "theme": {
+        "extend": {
+          "borderRadius": {
+            "lg": "0px",
+            "md": "0px",
+            "sm": "0px"
+          },
+          "colors": {
+            "rs-gold": "#C9A961",
+            "rs-orange": "#FF981F",
+            "rs-brown-dark": "#1a1a1a",
+            "rs-brown-medium": "#2a2a2a",
+            "rs-brown-light": "#7a7a7a",
+            "rs-green": "#00FF00",
+            "rs-red": "#FF0000",
+            "rs-yellow": "#FFEB3B",
+            "rs-cyan": "#00FFFF"
+          },
+          "fontFamily": {
+            "rs": [
+              "var(--font-rs)",
+              "monospace"
+            ],
+            "rs-bold": [
+              "var(--font-rs-bold)",
+              "monospace"
+            ],
+            "rs-quill": [
+              "var(--font-rs-quill)",
+              "serif"
+            ],
+            "rs-quill-caps": [
+              "var(--font-rs-quill-caps)",
+              "serif"
+            ]
+          }
+        }
+      }
+    }
+  },
   "cssVars": {
     "light": {
       "background": "25 35% 18%",

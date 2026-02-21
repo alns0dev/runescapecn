@@ -1,8 +1,14 @@
 {
   "name": "popover",
   "type": "registry:ui",
-  "dependencies": ["@radix-ui/react-popover", "clsx", "tailwind-merge"],
-  "registryDependencies": [],
+  "dependencies": [
+    "@radix-ui/react-popover",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [
+    "styles/runescape.json"
+  ],
   "files": [
     {
       "path": "ui/popover.tsx",

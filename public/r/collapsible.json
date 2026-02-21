@@ -4,11 +4,14 @@
   "dependencies": [
     "@radix-ui/react-collapsible"
   ],
-  "registryDependencies": [],
+  "registryDependencies": [
+    "styles/runescape.json"
+  ],
   "files": [
     {
       "path": "ui/collapsible.tsx",
-      "type": "registry:ui"
+      "type": "registry:ui",
+      "content": "import * as CollapsiblePrimitive from \"@radix-ui/react-collapsible\"\n\nconst Collapsible = CollapsiblePrimitive.Root\n\nconst CollapsibleTrigger = CollapsiblePrimitive.CollapsibleTrigger\n\nconst CollapsibleContent = CollapsiblePrimitive.CollapsibleContent\n\nexport { Collapsible, CollapsibleTrigger, CollapsibleContent }\n"
     }
   ]
 }

@@ -1,8 +1,13 @@
 {
   "name": "input",
   "type": "registry:ui",
-  "dependencies": ["clsx", "tailwind-merge"],
-  "registryDependencies": [],
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [
+    "styles/runescape.json"
+  ],
   "files": [
     {
       "path": "ui/input.tsx",

@@ -4,11 +4,14 @@
   "dependencies": [
     "@radix-ui/react-aspect-ratio"
   ],
-  "registryDependencies": [],
+  "registryDependencies": [
+    "styles/runescape.json"
+  ],
   "files": [
     {
       "path": "ui/aspect-ratio.tsx",
-      "type": "registry:ui"
+      "type": "registry:ui",
+      "content": "import * as AspectRatioPrimitive from \"@radix-ui/react-aspect-ratio\"\n\nconst AspectRatio = AspectRatioPrimitive.Root\n\nexport { AspectRatio }\n"
     }
   ]
 }

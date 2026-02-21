@@ -14,9 +14,9 @@
           "colors": {
             "rs-gold": "#C9A961",
             "rs-orange": "#FF981F",
-            "rs-brown-dark": "#3E2C1E",
-            "rs-brown-medium": "#5C4033",
-            "rs-brown-light": "#8B7355",
+            "rs-brown-dark": "#1a1a1a",
+            "rs-brown-medium": "#2a2a2a",
+            "rs-brown-light": "#7a7a7a",
             "rs-green": "#00FF00",
             "rs-red": "#FF0000",
             "rs-yellow": "#FFEB3B",
@@ -24,9 +24,20 @@
           },
           "fontFamily": {
             "rs": [
-              "Press Start 2P",
-              "Courier New",
+              "var(--font-rs)",
               "monospace"
+            ],
+            "rs-bold": [
+              "var(--font-rs-bold)",
+              "monospace"
+            ],
+            "rs-quill": [
+              "var(--font-rs-quill)",
+              "serif"
+            ],
+            "rs-quill-caps": [
+              "var(--font-rs-quill-caps)",
+              "serif"
             ]
           }
         }
@@ -53,6 +64,28 @@
       "destructive-foreground": "0 0% 100%",
       "border": "0 0% 0%",
       "input": "25 30% 25%",
+      "ring": "30 100% 56%",
+      "radius": "0px"
+    },
+    "dark": {
+      "background": "25 35% 12%",
+      "foreground": "0 0% 100%",
+      "card": "25 30% 10%",
+      "card-foreground": "30 100% 56%",
+      "popover": "25 35% 12%",
+      "popover-foreground": "30 100% 56%",
+      "primary": "45 65% 58%",
+      "primary-foreground": "0 0% 0%",
+      "secondary": "25 20% 20%",
+      "secondary-foreground": "0 0% 100%",
+      "muted": "25 20% 20%",
+      "muted-foreground": "30 30% 60%",
+      "accent": "45 65% 58%",
+      "accent-foreground": "0 0% 0%",
+      "destructive": "0 100% 50%",
+      "destructive-foreground": "0 0% 100%",
+      "border": "0 0% 0%",
+      "input": "25 30% 20%",
       "ring": "30 100% 56%",
       "radius": "0px"
     }

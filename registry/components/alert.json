@@ -1,8 +1,14 @@
 {
   "name": "alert",
   "type": "registry:ui",
-  "dependencies": ["class-variance-authority", "clsx", "tailwind-merge"],
-  "registryDependencies": [],
+  "dependencies": [
+    "class-variance-authority",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [
+    "styles/runescape.json"
+  ],
   "files": [
     {
       "path": "ui/alert.tsx",

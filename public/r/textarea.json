@@ -5,11 +5,14 @@
     "clsx",
     "tailwind-merge"
   ],
-  "registryDependencies": [],
+  "registryDependencies": [
+    "styles/runescape.json"
+  ],
   "files": [
     {
       "path": "ui/textarea.tsx",
-      "type": "registry:ui"
+      "type": "registry:ui",
+      "content": "import * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst Textarea = React.forwardRef<\n  HTMLTextAreaElement,\n  React.ComponentProps<\"textarea\">\n>(({ className, ...props }, ref) => {\n  return (\n    <textarea\n      className={cn(\n        \"flex min-h-[80px] w-full resize-vertical border-2 border-[#302a1e] bg-[#C9BA96] px-3 py-2 text-base text-[#1a1406] font-[family-name:var(--font-rs)] shadow-[inset_0_4px_8px_rgba(0,0,0,0.5),inset_3px_3px_6px_rgba(0,0,0,0.3),inset_-1px_-1px_0_rgba(255,255,255,0.2)] placeholder:text-[#6b5f4a] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rs-gold disabled:cursor-not-allowed disabled:opacity-50 transition-none\",\n        className\n      )}\n      ref={ref}\n      {...props}\n    />\n  )\n})\nTextarea.displayName = \"Textarea\"\n\nexport { Textarea }\n"
     }
   ]
 }

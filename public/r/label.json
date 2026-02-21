@@ -6,11 +6,14 @@
     "clsx",
     "tailwind-merge"
   ],
-  "registryDependencies": [],
+  "registryDependencies": [
+    "styles/runescape.json"
+  ],
   "files": [
     {
       "path": "ui/label.tsx",
-      "type": "registry:ui"
+      "type": "registry:ui",
+      "content": "import * as React from \"react\"\nimport * as LabelPrimitive from \"@radix-ui/react-label\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst Label = React.forwardRef<\n  React.ComponentRef<typeof LabelPrimitive.Root>,\n  React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root>\n>(({ className, ...props }, ref) => (\n  <LabelPrimitive.Root\n    ref={ref}\n    className={cn(\n      \"text-base text-rs-brown-light font-[family-name:var(--font-rs-bold)] uppercase peer-disabled:cursor-not-allowed peer-disabled:opacity-50\",\n      className\n    )}\n    {...props}\n  />\n))\nLabel.displayName = LabelPrimitive.Root.displayName\n\nexport { Label }\n"
     }
   ]
 }

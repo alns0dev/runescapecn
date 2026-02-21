@@ -33,6 +33,10 @@ runescapecn brings OSRS visual DNA into reusable components: hard edges, beveled
 Install components directly into your project from the hosted registry:
 
 ```bash
+# 1) Install the base RuneScape style (tokens, colors, vars)
+pnpm dlx shadcn@latest add https://runescapecn.com/r/styles/runescape.json
+
+# 2) Install any component
 pnpm dlx shadcn@latest add https://runescapecn.com/r/button.json
 ```
 

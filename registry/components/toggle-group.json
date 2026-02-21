@@ -1,8 +1,15 @@
 {
   "name": "toggle-group",
   "type": "registry:ui",
-  "dependencies": ["@radix-ui/react-toggle-group", "clsx", "tailwind-merge"],
-  "registryDependencies": ["toggle"],
+  "dependencies": [
+    "@radix-ui/react-toggle-group",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [
+    "styles/runescape.json",
+    "toggle"
+  ],
   "files": [
     {
       "path": "ui/toggle-group.tsx",

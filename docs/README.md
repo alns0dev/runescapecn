@@ -163,6 +163,10 @@ Components follow the shadcn/ui registry format. See `registry/` for JSON defini
 Install a component directly from the hosted registry endpoint:
 
 ```bash
+# Install base style first (tokens, vars, colors)
+pnpm dlx shadcn@latest add https://runescapecn.com/r/styles/runescape.json
+
+# Then add any component
 pnpm dlx shadcn@latest add https://runescapecn.com/r/badge.json
 ```
 
@@ -170,6 +174,9 @@ Local testing:
 
 ```bash
 pnpm dev
+# Install base style first
+pnpm dlx shadcn@latest add http://localhost:5173/r/styles/runescape.json
+# Then add components
 pnpm dlx shadcn@latest add http://localhost:5173/r/badge.json
 ```
 

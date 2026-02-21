@@ -6,11 +6,14 @@
     "clsx",
     "tailwind-merge"
   ],
-  "registryDependencies": [],
+  "registryDependencies": [
+    "styles/runescape.json"
+  ],
   "files": [
     {
       "path": "ui/badge.tsx",
-      "type": "registry:ui"
+      "type": "registry:ui",
+      "content": "import * as React from \"react\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst badgeVariants = cva(\n  \"inline-flex items-center border-2 border-black px-2 py-0.5 text-xs uppercase font-[family-name:var(--font-rs-bold)] transition-none\",\n  {\n    variants: {\n      variant: {\n        default:\n          \"bg-rs-gold text-black shadow-[inset_1px_1px_0_rgba(255,255,255,0.3),inset_-1px_-1px_0_rgba(0,0,0,0.5)]\",\n        destructive:\n          \"bg-rs-red text-white shadow-[inset_1px_1px_0_rgba(255,255,255,0.2),inset_-1px_-1px_0_rgba(0,0,0,0.5)]\",\n        success:\n          \"bg-rs-green text-black shadow-[inset_1px_1px_0_rgba(255,255,255,0.3),inset_-1px_-1px_0_rgba(0,0,0,0.5)]\",\n        outline:\n          \"bg-transparent text-rs-gold shadow-[inset_1px_1px_0_rgba(255,255,255,0.08),inset_-1px_-1px_0_rgba(0,0,0,0.5)]\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n    },\n  }\n)\n\nexport interface BadgeProps\n  extends React.HTMLAttributes<HTMLDivElement>,\n    VariantProps<typeof badgeVariants> {}\n\nconst Badge = React.forwardRef<HTMLDivElement, BadgeProps>(\n  ({ className, variant, ...props }, ref) => {\n    return (\n      <div\n        ref={ref}\n        className={cn(badgeVariants({ variant }), className)}\n        {...props}\n      />\n    )\n  }\n)\nBadge.displayName = \"Badge\"\n\nexport { Badge, badgeVariants }\n"
     }
   ]
 }
