@@ -1,8 +1,15 @@
 {
   "name": "dialog",
   "type": "registry:ui",
-  "dependencies": ["@radix-ui/react-dialog", "clsx", "tailwind-merge", "lucide-react"],
-  "registryDependencies": [],
+  "dependencies": [
+    "@radix-ui/react-dialog",
+    "clsx",
+    "tailwind-merge",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "styles/runescape.json"
+  ],
   "files": [
     {
       "path": "ui/dialog.tsx",

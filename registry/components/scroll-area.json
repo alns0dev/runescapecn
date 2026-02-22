@@ -1,8 +1,14 @@
 {
   "name": "scroll-area",
   "type": "registry:ui",
-  "dependencies": ["@radix-ui/react-scroll-area", "clsx", "tailwind-merge"],
-  "registryDependencies": [],
+  "dependencies": [
+    "@radix-ui/react-scroll-area",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [
+    "styles/runescape.json"
+  ],
   "files": [
     {
       "path": "ui/scroll-area.tsx",

@@ -1,8 +1,14 @@
 {
   "name": "hover-card",
   "type": "registry:ui",
-  "dependencies": ["@radix-ui/react-hover-card", "clsx", "tailwind-merge"],
-  "registryDependencies": [],
+  "dependencies": [
+    "@radix-ui/react-hover-card",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [
+    "styles/runescape.json"
+  ],
   "files": [
     {
       "path": "ui/hover-card.tsx",

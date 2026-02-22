@@ -1,8 +1,15 @@
 {
   "name": "pagination",
   "type": "registry:ui",
-  "dependencies": ["clsx", "tailwind-merge", "lucide-react"],
-  "registryDependencies": ["button"],
+  "dependencies": [
+    "clsx",
+    "tailwind-merge",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "styles/runescape.json",
+    "button"
+  ],
   "files": [
     {
       "path": "ui/pagination.tsx",

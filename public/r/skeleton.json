@@ -5,11 +5,14 @@
     "clsx",
     "tailwind-merge"
   ],
-  "registryDependencies": [],
+  "registryDependencies": [
+    "styles/runescape.json"
+  ],
   "files": [
     {
       "path": "ui/skeleton.tsx",
-      "type": "registry:ui"
+      "type": "registry:ui",
+      "content": "import * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst Skeleton = React.forwardRef<\n  HTMLDivElement,\n  React.HTMLAttributes<HTMLDivElement>\n>(({ className, ...props }, ref) => (\n  <div\n    ref={ref}\n    className={cn(\n      \"bg-rs-brown-medium border-2 border-black shadow-[inset_1px_1px_0_rgba(0,0,0,0.7),inset_-1px_-1px_0_rgba(255,255,255,0.05)] bg-[length:200%_100%] animate-[rs-shimmer_2s_linear_infinite] bg-[linear-gradient(90deg,transparent_25%,rgba(255,255,255,0.04)_50%,transparent_75%)]\",\n      className\n    )}\n    {...props}\n  />\n))\nSkeleton.displayName = \"Skeleton\"\n\nexport { Skeleton }\n"
     }
   ]
 }

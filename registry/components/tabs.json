@@ -1,8 +1,14 @@
 {
   "name": "tabs",
   "type": "registry:ui",
-  "dependencies": ["@radix-ui/react-tabs", "clsx", "tailwind-merge"],
-  "registryDependencies": [],
+  "dependencies": [
+    "@radix-ui/react-tabs",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [
+    "styles/runescape.json"
+  ],
   "files": [
     {
       "path": "ui/tabs.tsx",

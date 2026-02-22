@@ -441,12 +441,14 @@ function GetStartedPage() {
         </h2>
         <div className="space-y-3">
           <p className="text-base text-rs-brown-light leading-relaxed">
-            Install any component directly with shadcn CLI from the hosted
-            runescapecn registry endpoint.
+            Install the base RuneScape style first so theme tokens, colors, and
+            shared utilities are added. Then install any component from the
+            hosted registry endpoint.
           </p>
           <pre className="overflow-x-auto border-2 border-black bg-rs-brown-dark p-3 text-rs-orange text-sm font-mono">
             <code>
-              pnpm dlx shadcn@latest add https://runescapecn.com/r/badge.json
+              {`pnpm dlx shadcn@latest add https://runescapecn.com/r/styles/runescape.json
+pnpm dlx shadcn@latest add https://runescapecn.com/r/badge.json`}
             </code>
           </pre>
         </div>

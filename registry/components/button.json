@@ -1,8 +1,15 @@
 {
   "name": "button",
   "type": "registry:ui",
-  "dependencies": ["class-variance-authority", "clsx", "tailwind-merge", "@radix-ui/react-slot"],
-  "registryDependencies": [],
+  "dependencies": [
+    "class-variance-authority",
+    "clsx",
+    "tailwind-merge",
+    "@radix-ui/react-slot"
+  ],
+  "registryDependencies": [
+    "styles/runescape.json"
+  ],
   "files": [
     {
       "path": "ui/button.tsx",

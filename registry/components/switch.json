@@ -1,8 +1,14 @@
 {
   "name": "switch",
   "type": "registry:ui",
-  "dependencies": ["@radix-ui/react-switch", "clsx", "tailwind-merge"],
-  "registryDependencies": [],
+  "dependencies": [
+    "@radix-ui/react-switch",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [
+    "styles/runescape.json"
+  ],
   "files": [
     {
       "path": "ui/switch.tsx",

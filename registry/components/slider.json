@@ -1,8 +1,14 @@
 {
   "name": "slider",
   "type": "registry:ui",
-  "dependencies": ["@radix-ui/react-slider", "clsx", "tailwind-merge"],
-  "registryDependencies": [],
+  "dependencies": [
+    "@radix-ui/react-slider",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [
+    "styles/runescape.json"
+  ],
   "files": [
     {
       "path": "ui/slider.tsx",
